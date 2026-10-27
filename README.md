@@ -119,5 +119,7 @@ This project was built with Claude (Anthropic) as an AI coding assistant; the fu
 AI accelerated nearly everything (schema, generator, validator, tests, documentation) and I relied heavily on it for the
 initial implementation.
 
-> **TODO (author): replace this paragraph with what you personally reviewed, changed and validated** (for example: ran the
+> **TODO (author): replace this paragraph with what you personally reviewed, changed and validated**
+> I built this with Claude (Anthropic) as an AI assistant; prompts are in PROMPTS.md. AI wrote most of the initial code. I ran the generator, validator and tests on my machine, read WALKTHROUGH.md, and went through generate.py and validate.py to understand the pipeline.
+> 
 > generator and validator, read `WALKTHROUGH.md`, changed parameters, extended a test). Do not leave it as is.
