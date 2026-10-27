@@ -1,0 +1,89 @@
+gt_id,label_kind,issue_type,entity,entity_id,related_id,detail,expected_decision
+GT-00001,ANOMALY,INBOUND_COUNTED_TWICE,purchase_order,PO-2026-000901,PO-2026-000016,exact duplicate of PO-2026-000016 (qty_base 103),exclude the duplicate inbound from projected balance
+GT-00002,ANOMALY,INBOUND_COUNTED_TWICE,purchase_order,PO-2026-000902,PO-2026-000524,exact duplicate of PO-2026-000524 (qty_base 308),exclude the duplicate inbound from projected balance
+GT-00003,ANOMALY,INBOUND_COUNTED_TWICE,purchase_order,PO-2026-000903,PO-2026-000579,exact duplicate of PO-2026-000579 (qty_base 94),exclude the duplicate inbound from projected balance
+GT-00004,ANOMALY,INBOUND_COUNTED_TWICE,purchase_order,PO-2026-000904,PO-2026-000541,exact duplicate of PO-2026-000541 (qty_base 31),exclude the duplicate inbound from projected balance
+GT-00005,ANOMALY,INBOUND_COUNTED_TWICE,purchase_order,PO-2026-000905,PO-2026-000123,exact duplicate of PO-2026-000123 (qty_base 106),exclude the duplicate inbound from projected balance
+GT-00006,ANOMALY,SHORTAGE_WITHOUT_LEAD_TIME,shortage,SHORT-2026-000003,SKU-000246,"lead_time_days_used recorded 0 (true 57); true latest_order_date 2025-11-02, window_open=0",recompute with lead time 57 days
+GT-00007,ANOMALY,SHORTAGE_WITHOUT_LEAD_TIME,shortage,SHORT-2026-000014,SKU-000132,"lead_time_days_used recorded 0 (true 56); true latest_order_date 2025-11-24, window_open=0",recompute with lead time 56 days
+GT-00008,ANOMALY,SHORTAGE_WITHOUT_LEAD_TIME,shortage,SHORT-2026-000015,SKU-000232,"lead_time_days_used recorded 0 (true 60); true latest_order_date 2025-11-20, window_open=0",recompute with lead time 60 days
+GT-00009,ANOMALY,SHORTAGE_WITHOUT_LEAD_TIME,shortage,SHORT-2026-000017,SKU-000101,"lead_time_days_used recorded 0 (true 59); true latest_order_date 2025-11-28, window_open=0",recompute with lead time 59 days
+GT-00010,ANOMALY,SHORTAGE_WITHOUT_LEAD_TIME,shortage,SHORT-2026-000019,SKU-000246,"lead_time_days_used recorded 0 (true 57); true latest_order_date 2025-11-30, window_open=0",recompute with lead time 57 days
+GT-00011,ANOMALY,SUBSTITUTE_NOT_APPROVED,mitigation_option,MIT-SHORT-2026-000036-03,SKU-000032->SKU-000013,substitution is not APPROVED in sku_substitute,"reject this option; only APPROVED, effective substitutes are allowed"
+GT-00012,ANOMALY,SUBSTITUTE_NOT_APPROVED,mitigation_option,MIT-SHORT-2026-000052-02,SKU-000204->SKU-000236,substitution is not APPROVED in sku_substitute,"reject this option; only APPROVED, effective substitutes are allowed"
+GT-00013,ANOMALY,SUBSTITUTE_NOT_APPROVED,mitigation_option,MIT-SHORT-2026-000071-03,SKU-000224->SKU-000107,substitution is not APPROVED in sku_substitute,"reject this option; only APPROVED, effective substitutes are allowed"
+GT-00014,ANOMALY,SUBSTITUTE_NOT_APPROVED,mitigation_option,MIT-SHORT-2026-000136-02,SKU-000024->SKU-000266,substitution is not APPROVED in sku_substitute,"reject this option; only APPROVED, effective substitutes are allowed"
+GT-00015,ANOMALY,SUBSTITUTE_NOT_APPROVED,mitigation_option,MIT-SHORT-2026-000257-02,SKU-000290->SKU-000088,substitution is not APPROVED in sku_substitute,"reject this option; only APPROVED, effective substitutes are allowed"
+GT-00016,ANOMALY,SUPPLIER_CAPACITY_EXCEEDED,purchase_order,PO-2026-000053,SUP-0046|2026W04,qty_base raised 93->356; capacity 343,cap quantity at remaining supplier capacity or split across suppliers
+GT-00017,ANOMALY,SUPPLIER_CAPACITY_EXCEEDED,purchase_order,PO-2026-000070,SUP-0029|2026W01,qty_base raised 838->1290; capacity 1032,cap quantity at remaining supplier capacity or split across suppliers
+GT-00018,ANOMALY,SUPPLIER_CAPACITY_EXCEEDED,purchase_order,PO-2026-000176,SUP-0028|2026W13,qty_base raised 50->607; capacity 485,cap quantity at remaining supplier capacity or split across suppliers
+GT-00019,ANOMALY,SUPPLIER_CAPACITY_EXCEEDED,purchase_order,PO-2026-000318,SUP-0053|2026W19,qty_base raised 115->947; capacity 757,cap quantity at remaining supplier capacity or split across suppliers
+GT-00020,ANOMALY,SUPPLIER_CAPACITY_EXCEEDED,purchase_order,PO-2026-000482,SUP-0042|2026W36,qty_base raised 47->151; capacity 245,cap quantity at remaining supplier capacity or split across suppliers
+GT-00021,ANOMALY,UOM_MISMATCH,purchase_order,PO-2026-000244,SKU-000160,ordered 11 BOX; stored qty_base=11 but correct=132 EA,convert with factor 12.000000; correct qty_base=132
+GT-00022,ANOMALY,UOM_MISMATCH,purchase_order,PO-2026-000361,SKU-000180,ordered 40 BOX; stored qty_base=40 but correct=480 EA,convert with factor 12.000000; correct qty_base=480
+GT-00023,ANOMALY,UOM_MISMATCH,purchase_order,PO-2026-000563,SKU-000102,ordered 547 LB; stored qty_base=547 but correct=248 KG,convert with factor 0.453592; correct qty_base=248
+GT-00024,ANOMALY,UOM_MISMATCH,purchase_order,PO-2026-000666,SKU-000216,ordered 11 BOX; stored qty_base=11 but correct=132 EA,convert with factor 12.000000; correct qty_base=132
+GT-00025,ANOMALY,UOM_MISMATCH,purchase_order,PO-2026-000711,SKU-000141,ordered 203 LB; stored qty_base=203 but correct=92 KG,convert with factor 0.453592; correct qty_base=92
+GT-00026,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000009-LOC-002-2026W28,SKU-000009|LOC-002,forecast x3.96 for 1 week(s) from 2026W28,expect shortage risk; consider expedite or alternative supply
+GT-00027,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000010-LOC-002-2026W11,SKU-000010|LOC-002,forecast x3.75 for 1 week(s) from 2026W11,expect shortage risk; consider expedite or alternative supply
+GT-00028,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000011-LOC-002-2026W17,SKU-000011|LOC-002,forecast x3.86 for 1 week(s) from 2026W17,expect shortage risk; consider expedite or alternative supply
+GT-00029,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000011-LOC-008-2026W46,SKU-000011|LOC-008,forecast x3.63 for 3 week(s) from 2026W46,expect shortage risk; consider expedite or alternative supply
+GT-00030,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000016-LOC-008-2026W38,SKU-000016|LOC-008,forecast x3.48 for 1 week(s) from 2026W38,expect shortage risk; consider expedite or alternative supply
+GT-00031,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000018-LOC-002-2026W30,SKU-000018|LOC-002,forecast x3.83 for 3 week(s) from 2026W30,expect shortage risk; consider expedite or alternative supply
+GT-00032,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000018-LOC-005-2026W28,SKU-000018|LOC-005,forecast x2.15 for 2 week(s) from 2026W28,expect shortage risk; consider expedite or alternative supply
+GT-00033,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000019-LOC-009-2026W16,SKU-000019|LOC-009,forecast x3.63 for 3 week(s) from 2026W16,expect shortage risk; consider expedite or alternative supply
+GT-00034,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000022-LOC-005-2026W44,SKU-000022|LOC-005,forecast x3.25 for 1 week(s) from 2026W44,expect shortage risk; consider expedite or alternative supply
+GT-00035,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000033-LOC-004-2026W07,SKU-000033|LOC-004,forecast x2.33 for 2 week(s) from 2026W07,expect shortage risk; consider expedite or alternative supply
+GT-00036,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000057-LOC-003-2026W07,SKU-000057|LOC-003,forecast x3.62 for 3 week(s) from 2026W07,expect shortage risk; consider expedite or alternative supply
+GT-00037,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000069-LOC-012-2026W43,SKU-000069|LOC-012,forecast x3.96 for 3 week(s) from 2026W43,expect shortage risk; consider expedite or alternative supply
+GT-00038,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000073-LOC-005-2026W09,SKU-000073|LOC-005,forecast x2.18 for 1 week(s) from 2026W09,expect shortage risk; consider expedite or alternative supply
+GT-00039,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000075-LOC-012-2026W06,SKU-000075|LOC-012,forecast x2.06 for 2 week(s) from 2026W06,expect shortage risk; consider expedite or alternative supply
+GT-00040,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000083-LOC-005-2026W35,SKU-000083|LOC-005,forecast x3.45 for 1 week(s) from 2026W35,expect shortage risk; consider expedite or alternative supply
+GT-00041,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000083-LOC-006-2026W14,SKU-000083|LOC-006,forecast x2.85 for 1 week(s) from 2026W14,expect shortage risk; consider expedite or alternative supply
+GT-00042,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000091-LOC-007-2026W26,SKU-000091|LOC-007,forecast x2.69 for 3 week(s) from 2026W26,expect shortage risk; consider expedite or alternative supply
+GT-00043,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000093-LOC-007-2026W35,SKU-000093|LOC-007,forecast x2.5 for 1 week(s) from 2026W35,expect shortage risk; consider expedite or alternative supply
+GT-00044,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000111-LOC-007-2026W26,SKU-000111|LOC-007,forecast x3.71 for 3 week(s) from 2026W26,expect shortage risk; consider expedite or alternative supply
+GT-00045,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000116-LOC-009-2026W21,SKU-000116|LOC-009,forecast x2.16 for 2 week(s) from 2026W21,expect shortage risk; consider expedite or alternative supply
+GT-00046,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000124-LOC-005-2026W21,SKU-000124|LOC-005,forecast x2.02 for 1 week(s) from 2026W21,expect shortage risk; consider expedite or alternative supply
+GT-00047,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000125-LOC-005-2026W28,SKU-000125|LOC-005,forecast x3.96 for 2 week(s) from 2026W28,expect shortage risk; consider expedite or alternative supply
+GT-00048,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000125-LOC-012-2026W27,SKU-000125|LOC-012,forecast x3.13 for 2 week(s) from 2026W27,expect shortage risk; consider expedite or alternative supply
+GT-00049,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000129-LOC-003-2026W35,SKU-000129|LOC-003,forecast x2.35 for 2 week(s) from 2026W35,expect shortage risk; consider expedite or alternative supply
+GT-00050,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000133-LOC-007-2026W01,SKU-000133|LOC-007,forecast x3.28 for 1 week(s) from 2026W01,expect shortage risk; consider expedite or alternative supply
+GT-00051,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000137-LOC-005-2026W03,SKU-000137|LOC-005,forecast x2.8 for 3 week(s) from 2026W03,expect shortage risk; consider expedite or alternative supply
+GT-00052,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000143-LOC-005-2026W16,SKU-000143|LOC-005,forecast x3.76 for 2 week(s) from 2026W16,expect shortage risk; consider expedite or alternative supply
+GT-00053,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000144-LOC-004-2026W43,SKU-000144|LOC-004,forecast x2.01 for 3 week(s) from 2026W43,expect shortage risk; consider expedite or alternative supply
+GT-00054,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000145-LOC-003-2026W22,SKU-000145|LOC-003,forecast x2.15 for 2 week(s) from 2026W22,expect shortage risk; consider expedite or alternative supply
+GT-00055,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000147-LOC-006-2026W47,SKU-000147|LOC-006,forecast x3.21 for 2 week(s) from 2026W47,expect shortage risk; consider expedite or alternative supply
+GT-00056,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000149-LOC-007-2026W46,SKU-000149|LOC-007,forecast x3.89 for 1 week(s) from 2026W46,expect shortage risk; consider expedite or alternative supply
+GT-00057,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000153-LOC-008-2026W47,SKU-000153|LOC-008,forecast x3.89 for 1 week(s) from 2026W47,expect shortage risk; consider expedite or alternative supply
+GT-00058,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000154-LOC-012-2026W14,SKU-000154|LOC-012,forecast x2.65 for 3 week(s) from 2026W14,expect shortage risk; consider expedite or alternative supply
+GT-00059,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000155-LOC-003-2026W13,SKU-000155|LOC-003,forecast x2.41 for 1 week(s) from 2026W13,expect shortage risk; consider expedite or alternative supply
+GT-00060,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000170-LOC-002-2026W36,SKU-000170|LOC-002,forecast x3.83 for 3 week(s) from 2026W36,expect shortage risk; consider expedite or alternative supply
+GT-00061,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000172-LOC-005-2026W05,SKU-000172|LOC-005,forecast x3.68 for 1 week(s) from 2026W05,expect shortage risk; consider expedite or alternative supply
+GT-00062,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000176-LOC-001-2026W12,SKU-000176|LOC-001,forecast x3.8 for 2 week(s) from 2026W12,expect shortage risk; consider expedite or alternative supply
+GT-00063,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000176-LOC-002-2026W10,SKU-000176|LOC-002,forecast x3.85 for 2 week(s) from 2026W10,expect shortage risk; consider expedite or alternative supply
+GT-00064,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000177-LOC-007-2026W36,SKU-000177|LOC-007,forecast x2.69 for 1 week(s) from 2026W36,expect shortage risk; consider expedite or alternative supply
+GT-00065,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000177-LOC-011-2026W49,SKU-000177|LOC-011,forecast x3.29 for 2 week(s) from 2026W49,expect shortage risk; consider expedite or alternative supply
+GT-00066,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000180-LOC-009-2026W38,SKU-000180|LOC-009,forecast x3.32 for 3 week(s) from 2026W38,expect shortage risk; consider expedite or alternative supply
+GT-00067,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000181-LOC-005-2026W45,SKU-000181|LOC-005,forecast x2.78 for 1 week(s) from 2026W45,expect shortage risk; consider expedite or alternative supply
+GT-00068,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000191-LOC-010-2026W02,SKU-000191|LOC-010,forecast x3.02 for 1 week(s) from 2026W02,expect shortage risk; consider expedite or alternative supply
+GT-00069,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000196-LOC-005-2026W31,SKU-000196|LOC-005,forecast x2.8 for 1 week(s) from 2026W31,expect shortage risk; consider expedite or alternative supply
+GT-00070,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000209-LOC-002-2026W43,SKU-000209|LOC-002,forecast x3.1 for 1 week(s) from 2026W43,expect shortage risk; consider expedite or alternative supply
+GT-00071,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000213-LOC-010-2026W05,SKU-000213|LOC-010,forecast x3.95 for 3 week(s) from 2026W05,expect shortage risk; consider expedite or alternative supply
+GT-00072,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000215-LOC-002-2026W01,SKU-000215|LOC-002,forecast x2.18 for 3 week(s) from 2026W01,expect shortage risk; consider expedite or alternative supply
+GT-00073,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000222-LOC-004-2026W06,SKU-000222|LOC-004,forecast x3.31 for 3 week(s) from 2026W06,expect shortage risk; consider expedite or alternative supply
+GT-00074,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000223-LOC-011-2026W28,SKU-000223|LOC-011,forecast x3.57 for 3 week(s) from 2026W28,expect shortage risk; consider expedite or alternative supply
+GT-00075,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000224-LOC-004-2026W16,SKU-000224|LOC-004,forecast x2.96 for 1 week(s) from 2026W16,expect shortage risk; consider expedite or alternative supply
+GT-00076,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000225-LOC-001-2026W38,SKU-000225|LOC-001,forecast x2.05 for 2 week(s) from 2026W38,expect shortage risk; consider expedite or alternative supply
+GT-00077,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000226-LOC-007-2026W49,SKU-000226|LOC-007,forecast x3.03 for 3 week(s) from 2026W49,expect shortage risk; consider expedite or alternative supply
+GT-00078,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000230-LOC-010-2026W44,SKU-000230|LOC-010,forecast x2.59 for 1 week(s) from 2026W44,expect shortage risk; consider expedite or alternative supply
+GT-00079,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000235-LOC-005-2026W12,SKU-000235|LOC-005,forecast x3.91 for 3 week(s) from 2026W12,expect shortage risk; consider expedite or alternative supply
+GT-00080,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000238-LOC-011-2026W49,SKU-000238|LOC-011,forecast x3.46 for 1 week(s) from 2026W49,expect shortage risk; consider expedite or alternative supply
+GT-00081,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000239-LOC-004-2026W13,SKU-000239|LOC-004,forecast x3.23 for 1 week(s) from 2026W13,expect shortage risk; consider expedite or alternative supply
+GT-00082,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000259-LOC-010-2026W01,SKU-000259|LOC-010,forecast x2.42 for 2 week(s) from 2026W01,expect shortage risk; consider expedite or alternative supply
+GT-00083,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000278-LOC-011-2026W39,SKU-000278|LOC-011,forecast x3.72 for 2 week(s) from 2026W39,expect shortage risk; consider expedite or alternative supply
+GT-00084,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000279-LOC-012-2026W40,SKU-000279|LOC-012,forecast x3.37 for 3 week(s) from 2026W40,expect shortage risk; consider expedite or alternative supply
+GT-00085,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000280-LOC-001-2026W15,SKU-000280|LOC-001,forecast x2.61 for 3 week(s) from 2026W15,expect shortage risk; consider expedite or alternative supply
+GT-00086,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000286-LOC-004-2026W17,SKU-000286|LOC-004,forecast x2.88 for 2 week(s) from 2026W17,expect shortage risk; consider expedite or alternative supply
+GT-00087,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000290-LOC-006-2026W11,SKU-000290|LOC-006,forecast x2.14 for 3 week(s) from 2026W11,expect shortage risk; consider expedite or alternative supply
+GT-00088,SCENARIO,DEMAND_SPIKE,forecast_demand,DEM-SKU-000290-LOC-008-2026W32,SKU-000290|LOC-008,forecast x3.84 for 3 week(s) from 2026W32,expect shortage risk; consider expedite or alternative supply

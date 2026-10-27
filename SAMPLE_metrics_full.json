@@ -1,0 +1,49 @@
+{
+ "sku_location_pairs": 24000,
+ "shortage_episodes": 5111,
+ "pairs_with_shortage_pct": 18.67,
+ "approx_fill_rate_pct": 95.66,
+ "shortage_by_cause": {
+  "INSUFFICIENT_SUPPLY": 1921,
+  "SUPPLIER_CAPACITY": 1633,
+  "LEAD_TIME_GAP": 570,
+  "TRANSPORT_DELAY": 465,
+  "PRODUCTION_CAPACITY": 207,
+  "PO_CANCELLED": 141,
+  "DEMAND_SPIKE": 103,
+  "NO_INBOUND_PLANNED": 71
+ },
+ "shortage_by_status": {
+  "MITIGATION_PROPOSED": 3030,
+  "ESCALATED": 1507,
+  "OPEN": 574
+ },
+ "shortages_with_resolving_option_pct": 60.1,
+ "avg_options_per_shortage": 1.07,
+ "ordering_window_closed_pct": 1.5,
+ "total_value_at_risk_usd": 37688349.94,
+ "avg_extra_cost_by_option_usd": {
+  "ALT_SUPPLIER": 258.02,
+  "EXPEDITE_PO": 1140.14,
+  "PRODUCTION_BOOST": 598.59,
+  "SUBSTITUTE": 2317.19
+ },
+ "avg_service_level_by_option_pct": {
+  "ALT_SUPPLIER": 91.5,
+  "EXPEDITE_PO": 90.8,
+  "PRODUCTION_BOOST": 99.5,
+  "SUBSTITUTE": 91.6
+ },
+ "po_count": 10050,
+ "po_status": {
+  "CONFIRMED": 3083,
+  "SHIPPED": 2800,
+  "PLANNED": 2078,
+  "DELAYED": 1788,
+  "CANCELLED": 301
+ },
+ "po_delayed_pct": 17.79,
+ "po_avg_delay_days_when_delayed": 11.7,
+ "supplier_capacity_utilisation_pct": 10.47,
+ "demand_spike_scenarios": 926
+}
